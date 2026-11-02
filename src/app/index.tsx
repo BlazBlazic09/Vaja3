@@ -1,4 +1,5 @@
 
+import { router } from "expo-router";
 import { Button, StyleSheet, Text, View } from "react-native";
 
 export default function HomeScreen() {
@@ -18,7 +19,7 @@ export default function HomeScreen() {
 
       <Button
         title="Dodaj novo obveznost"
-        onPress={() => alert("Tukaj bomo dodali nalogo!")}
+        onPress={() => router.push("/add")}
       />
     </View>
   );
