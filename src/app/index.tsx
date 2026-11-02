@@ -9,7 +9,7 @@ export default function HomeScreen() {
       </Text>
 
       <Text style={styles.podnaslov}>
-        Dobrodosel v svojem planerju
+        Dobrodosel v svojem splanerju
       </Text>
 
       <Text style={styles.besedilo}>
