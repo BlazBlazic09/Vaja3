@@ -1,14 +1,20 @@
-import {Text, View, Stylesheet},
-import { Callback } from "@react-native-async-storage/async-storage/lib/typescript/types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+type Naloga = {
+    id: string;
+    ime: string;
+    predmet: string;
+    opravljeno: boolean;
+};
 
 export default function ExploreScreen() {
-    const [naloge, setNaloge] = useState([]);
+    const [naloge, setNaloge] = useState<Naloga[]>([]);
 
     useFocusEffect(
-        useCallback(()) => {
+        useCallback(() => {
             naloziNaloge();
         }, [])
     );
@@ -40,16 +46,16 @@ export default function ExploreScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1, backgroundColor: "#000000", padding: 20,
-    }
+    },
     naslov: {
-        fontsize: 28, fontWeight: "bold", color: "#ffffff", marginTop: 50, marginBottom: 20,
-    }
+        fontSize: 28, fontWeight: "bold", color: "#ffffff", marginTop: 50, marginBottom: 20,
+    },
     kartica: {
         backgroundColor: "#ffffff", padding: 15, borderRadius: 10, marginBottom: 15,
-    }
+    },
     ime: {
     fontSize: 18, fontWeight: "bold", color: "#000000",
-    }
+    },
     predmet: {
     fontSize: 15, color: "#555555", marginTop: 5,
   },
