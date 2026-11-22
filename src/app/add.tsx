@@ -1,13 +1,24 @@
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function AddScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.naslov}>Dodaj novo nalogo</Text>
       <TextInput
-        placeholder="Vpiši ime naloge"
-        placeholderTextColor="#888888"
-        style={styles.vnos}
+            placeholder="Vpiši ime naloge"
+            placeholderTextColor="#888888"
+            style={styles.vnos}
+        />
+
+        <TextInput
+            placeholder="Vpiši predmet"
+            placeholderTextColor="#888888"
+            style={styles.vnos}
+        />
+
+        <Button
+            title="Shrani nalogo"
+            onPress={() => alert("Naloga je shranjena!")}
         />
     </View>
   );
