@@ -1,31 +1,16 @@
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+
+import { useState } from "react";
 
 export default function AddScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.naslov}>Dodaj novo nalogo</Text>
-      <TextInput
-            placeholder="Vpiši ime naloge"
-            placeholderTextColor="#888888"
-            style={styles.vnos}
-        />
+  const [ime, setIme] = useState("");
+  const [predmet, setPredmet] = useState("");
 
-        <TextInput
-            placeholder="Vpiši predmet"
-            placeholderTextColor="#888888"
-            style={styles.vnos}
-        />
+  const [ime, setIme] = useState("");
+  const [predmet, setPredmet] = useState("");
 
-        <Button
-            title="Shrani nalogo"
-            onPress={() => alert("Naloga je shranjena!")}
-        />
-    </View>
-  );
+  const shraniNalogo = async () =>{}
+    if (ime.trim() === "" || predmet.trim() === ""){
+      Alert.alert ("napaka", "izpolni obe polji");
+      return;
+    }
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#000000', padding: 20 },
-  naslov: { fontSize: 28, fontWeight: 'bold', color: '#ffffff', marginTop: 50 },
-  vnos: { backgroundColor: '#ffffff', padding: 15, borderRadius: 10, marginTop: 25, fontSize: 16 },
-});
