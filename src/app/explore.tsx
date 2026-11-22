@@ -1,4 +1,9 @@
-import {router} from "expo-router";
-import { useState } from "react";
-import {Text, Alert, View, Button, Stylesheet, TextInput}
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Text, View } from "react-native";
+
+export default function ExploreScreen() {
+  return (
+    <View>
+      <Text>Moje naloge</Text>
+    </View>
+  );
+}
